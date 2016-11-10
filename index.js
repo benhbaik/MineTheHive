@@ -2,7 +2,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 
 var mongoose = require('mongoose');
-var Promise = require("bluebird");
+var Promise = require('bluebird');
 var db = mongoose.connection;
 var uri;
 
@@ -30,6 +30,14 @@ db.once('open', function() {
     console.log('Connected to DB');
 });
 
+app.use(express.static(__dirname + '/public'));
+
 app.use('/api', apiRoutes);
 
-app.listen(port);
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(port, function() {
+    console.log('Listening on ' + port);
+});

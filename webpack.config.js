@@ -1,10 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: __dirname + '/public/index.html',
-    filename: 'index.html',
-    inject: 'body'
-})
-
 module.exports = {
     entry: `${__dirname}/publicSource/index.js`,
     output: {
@@ -20,6 +13,5 @@ module.exports = {
                 presets: ['es2015', 'react']
             }
         }]
-    },
-    plugins: [HtmlWebpackPluginConfig]
+    }
 }
