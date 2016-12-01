@@ -2,3 +2,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#brand {
+    padding: 1rem;
+}
+
+#logo {
+    height: 3rem;
+}
+
+#mth {
+    margin: 1.5rem 0;
+}

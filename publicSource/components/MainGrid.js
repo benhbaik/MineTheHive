@@ -1,9 +1,12 @@
 import React from 'react';
+import Current from './Current';
 
 const MainGrid = React.createClass({
     render() {
         return (
-            <h1>Main grid</h1>
+            <div>
+                <Current/>
+            </div>
         )
     }
 });

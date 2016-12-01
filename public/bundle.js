@@ -56,13 +56,9 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _MainGrid = __webpack_require__(228);
+	var _MainGrid = __webpack_require__(229);
 
 	var _MainGrid2 = _interopRequireDefault(_MainGrid);
-
-	var _Article = __webpack_require__(229);
-
-	var _Article2 = _interopRequireDefault(_Article);
 
 	var _reactRouter = __webpack_require__(173);
 
@@ -74,12 +70,11 @@
 	    _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _Main2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _MainGrid2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/article/:articleId', component: _Article2.default })
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _MainGrid2.default })
 	    )
 	);
 
-	(0, _reactDom.render)(_react2.default.createElement(_Main2.default, null), document.getElementById('root'));
+	(0, _reactDom.render)(router, document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -21464,103 +21459,29 @@
 
 	var _reactRouter = __webpack_require__(173);
 
+	var _Navbar = __webpack_require__(228);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	var _MainGrid = __webpack_require__(229);
+
+	var _MainGrid2 = _interopRequireDefault(_MainGrid);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Main = _react2.default.createClass({
 	    displayName: 'Main',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'nav',
-	            { className: 'navbar navbar-inverse' },
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'container-fluid' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'navbar-header' },
-	                    _react2.default.createElement(
-	                        'button',
-	                        { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
-	                        _react2.default.createElement('span', { className: 'icon-bar' }),
-	                        _react2.default.createElement('span', { className: 'icon-bar' }),
-	                        _react2.default.createElement('span', { className: 'icon-bar' })
-	                    ),
-	                    _react2.default.createElement(
-	                        'a',
-	                        { className: 'navbar-brand', href: '#' },
-	                        _react2.default.createElement('img', { id: 'logo', src: './style/img/mthLogo.png', alt: '' })
-	                    ),
-	                    _react2.default.createElement(
-	                        'h4',
-	                        null,
-	                        'Mine the Hive'
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'collapse navbar-collapse' },
-	                    _react2.default.createElement(
-	                        'ul',
-	                        { className: 'nav navbar-nav' },
-	                        _react2.default.createElement(
-	                            'li',
-	                            { className: 'active' },
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Home'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Current'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Discourse'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Sessions'
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Enigmas'
-	                            )
-	                        )
-	                    )
-	                )
-	            )
+	            'div',
+	            null,
+	            _react2.default.createElement(_Navbar2.default, null),
+	            _react2.default.cloneElement(this.props.children, this.props)
 	        );
 	    }
 	});
 
 	exports.default = Main;
-
-	// <span className="glyphicon glyphicon-menu-hamburger"></span>
-	//     <a href="/" className="navbar-brand">
-	//         <img src="./style/img/mthLogo.png" alt=""/>
-	//     </a>
-	//      <h1>Mine the Hive</h1>
 
 /***/ },
 /* 173 */
@@ -26481,20 +26402,103 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(173);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var MainGrid = _react2.default.createClass({
-	    displayName: 'MainGrid',
+	var Navbar = _react2.default.createClass({
+	    displayName: 'Navbar',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'h1',
+	            'div',
 	            null,
-	            'Main grid'
+	            _react2.default.createElement(
+	                'nav',
+	                { className: 'navbar navbar-inverse' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container-fluid' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'navbar-header' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'button', className: 'navbar-toggle', 'data-toggle': 'collapse', 'data-target': '#myNavbar' },
+	                            _react2.default.createElement('span', { className: 'icon-bar' }),
+	                            _react2.default.createElement('span', { className: 'icon-bar' }),
+	                            _react2.default.createElement('span', { className: 'icon-bar' })
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactRouter.Link,
+	                            { id: 'brand', className: 'navbar-brand', to: '/' },
+	                            _react2.default.createElement('img', { id: 'logo', src: './style/img/mthLogo.png', alt: '' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'h4',
+	                            { id: 'mth' },
+	                            'Mine the Hive'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'collapse navbar-collapse', id: 'myNavbar' },
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'nav navbar-nav' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                { className: 'active' },
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Home'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Current'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Discourse'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Sessions'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Enigmas'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            )
 	        );
 	    }
 	});
 
-	exports.default = MainGrid;
+	exports.default = Navbar;
 
 /***/ },
 /* 229 */
@@ -26510,20 +26514,62 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Current = __webpack_require__(230);
+
+	var _Current2 = _interopRequireDefault(_Current);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Article = _react2.default.createClass({
-	    displayName: 'Article',
+	var MainGrid = _react2.default.createClass({
+	    displayName: 'MainGrid',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'h1',
+	            'div',
 	            null,
-	            'Article'
+	            _react2.default.createElement(_Current2.default, null)
 	        );
 	    }
 	});
 
-	exports.default = Article;
+	exports.default = MainGrid;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Current = _react2.default.createClass({
+	    displayName: "Current",
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "current" },
+	            _react2.default.createElement(
+	                "h4",
+	                null,
+	                "Current"
+	            ),
+	            _react2.default.createElement(
+	                "p",
+	                null,
+	                "Current description."
+	            )
+	        );
+	    }
+	});
+
+	exports.default = Current;
 
 /***/ }
 /******/ ]);
